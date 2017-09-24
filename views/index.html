@@ -14,15 +14,15 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-  <a-scene embedded artoolkit='sourceType: webcam;'>
-    <!-- <a-marker-camera type="pattern" patternUrl="ft-marker.patt">
+  <!-- <a-scene embedded artoolkit='sourceType: webcam;'>
+    <a-marker-camera type="pattern" patternUrl="ft-marker.patt">
       <a-box color="#312783" depth="2" material='opacity: 0.5;'></a-box>  
-    </a-marker-camera> -->
+    </a-marker-camera>
     
-    <!-- <a-marker type="pattern" patternUrl="ft-marker.patt">
+    <a-marker type="pattern" patternUrl="ft-marker.patt">
       <a-cube position='0 0 0.5' color="#ffffff" depth="-2"></a-cube>               
-    </a-marker> -->
-  </a-scene>
+    </a-marker>
+  </a-scene> -->
 
   <script>
 	// init renderer
@@ -119,7 +119,8 @@
 	scene.add(markerRoot)
 	var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
 		type : 'pattern',
-		patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.ft'
+		patternUrl : './data/data/patt.ft'
+		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.ft'
 	})
 
 	// build a smoothedControls
