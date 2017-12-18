@@ -18,8 +18,17 @@
     <!-- <a-marker-camera type="pattern" patternUrl="pattern-marker.patt">
       <a-box position='0 0 0.5' color="#312783" depth="-2" material='opacity: 0.5;'></a-box>  
     </a-marker-camera> -->
-    
-    <a-marker type="pattern" patternUrl="patt.hiro">
+	
+	<a-marker type="pattern" patternUrl="hiro.patt">
+		<a-sphere position="0 1.25 19" radius="1.25" color="#EF2D5E"></a-sphere>	
+	</a-marker>
+
+		<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+	<a-box position="-1 0.5 -3" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9"></a-box>
+	<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+	<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+	
+	<a-marker type="pattern" patternUrl="patt.hiro">
       <a-cube position='0 0 0.5' color="#ffffff" depth="-2"></a-cube>               
 	</a-marker>
 	<a-entity camera></a-entity>
@@ -120,7 +129,7 @@
 	scene.add(markerRoot)
 	var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
 		type : 'pattern',
-		patternUrl : './data/data/pattern-letterF.patt'
+		patternUrl : './hiro.patt'
 		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.ft'
 	})
 
@@ -160,17 +169,6 @@
 	
 	onRenderFcts.push(function(){
 		mesh.rotation.x += 0.1
-	})
-
-	//////////////////////////////////////////////////////////////////////////////////
-	//		render the whole thing on the page
-	//////////////////////////////////////////////////////////////////////////////////
-	var stats = new Stats();
-	document.body.appendChild( stats.dom );
-	// render the scene
-	onRenderFcts.push(function(){
-		renderer.render( scene, camera );
-		stats.update();
 	})
 
 	// run the rendering loop
