@@ -15,8 +15,8 @@
 
 <body style="margin: 0; overflow: hidden;">
   <a-scene embedded artoolkit='sourceType: webcam;'>
-    <a-marker-camera type="pattern" patternUrl="ft-marker.patt">
-      <a-box color="#312783" depth="2" material='opacity: 0.5;'></a-box>  
+    <a-marker-camera type="pattern" patternUrl="pattern-marker.patt">
+      <a-box position='0 0 0.5' color="#312783" depth="-2" material='opacity: 0.5;'></a-box>  
     </a-marker-camera>
     
     <!-- <a-marker type="pattern" patternUrl="ft-marker.patt">
@@ -24,7 +24,7 @@
     </a-marker> -->
   </a-scene>
 
-  <!-- <script>
+  <script>
 	// init renderer
 	var renderer	= new THREE.WebGLRenderer({
 		// antialias	: true,
@@ -186,7 +186,7 @@
 			onRenderFct(deltaMsec/1000, nowMsec/1000)
 		})
 	})
-  </script> -->
+  </script>
 </body>
 
 </html>
